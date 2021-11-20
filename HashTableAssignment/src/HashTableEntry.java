@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 /**
  * The following code is an object that carries the data for a SINGLE chain in a separate chaining hash table
+ * Since words can have the same hash code, they are stored in the same chain with a frequency stored in a
+ * related location.
  *
  * @author Jacob Lurie
  * @version 1.1
@@ -8,12 +10,13 @@ import java.util.ArrayList;
  */
 public class HashTableEntry {
 
-    // fields
     private ArrayList<String> wordValues;
     private ArrayList<Integer> frequencies;
 
 
-    // constructor
+    /**
+     * constructor creates ArrayLists for words and their frequencies
+     */
     public HashTableEntry() {
 
         wordValues = new ArrayList<String>();
@@ -21,7 +24,10 @@ public class HashTableEntry {
 
     }
 
-    // adds a string to the wordValues array list and sets appropriate frequency
+    /**
+     * adds a string to the wordValues array list and sets appropriate frequency
+     * @param s string to be added into chain
+     */
     public void addString(String s) {
 
         // Check if exists and either increment frequency or add new value
@@ -46,12 +52,18 @@ public class HashTableEntry {
 
     }
 
-    // getter for wordValues array list
+    /**
+     * getter for wordValues ArrayList
+     * @return ArrayList of word values
+     */
     public ArrayList<String> getWordValues() {
         return wordValues;
     }
 
-    // getter for frequency array list
+    /**
+     * getter for frequencies array list
+     * @return ArrayList of frequencies for value in chain
+     */
     public ArrayList<Integer> getFrequencies() {
         return frequencies;
     }

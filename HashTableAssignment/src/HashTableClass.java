@@ -12,16 +12,11 @@ import java.util.Locale;
 
 public class HashTableClass {
 
-
-        public static void main(String[] args) {
-
-            // Tests the wordCount method. String can replaced with any input.
-            String test = "this is a test string that can be replace with any values that you want to put in";
-            wordCount(test);
-
-        }
-
-        public static void wordCount(String input) {
+    /**
+     * Creates a hash table by breaking apart input string
+     * @param input string of values to be inserted into hash table
+     */
+    public void createHashTable(String input) {
 
             // Splits string into input words
             String[] inputWords = input.split("\\P{Alpha}+");
@@ -82,8 +77,14 @@ public class HashTableClass {
 
         }
 
-    // rehashes the table based on the original hash table with the input words
-    public static HashTableEntry[] rehash(HashTableEntry[] original, String[] inputWords, int currentIndex) {
+    /**
+     * rehashes the table based on the original hash table with the input words
+     * @param original original array of hash table entries
+     * @param inputWords array of words to be inserted in hashtable
+     * @param currentIndex current index being inserted into table
+     * @return new rehashed table
+     */
+    public HashTableEntry[] rehash(HashTableEntry[] original, String[] inputWords, int currentIndex) {
 
         // Size values
         int currentSize = original.length;
